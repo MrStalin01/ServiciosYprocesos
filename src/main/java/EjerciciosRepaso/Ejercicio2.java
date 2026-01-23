@@ -1,5 +1,8 @@
 package EjerciciosRepaso;
 
+//2.- Transforma el ejercicio anterior. Modifica el mensaje “Hola Mundo” en el hilo para incluir el
+//identificador del hilo. Prueba de nuevo el programa Java creado anteriormente.
+
 public class Ejercicio2 extends Thread {
     public Ejercicio2(String name) {
         super(name);
