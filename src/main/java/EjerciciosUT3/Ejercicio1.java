@@ -1,16 +1,7 @@
 package EjerciciosUT3;
 
-// Crea un programa que extienda de Thread al que se le indique un número límite, y muestre
-//todos los números inferiores desde el cero. Junto a cada número deberá aparecer el nombre
-//del hilo. Se deberán crear y ejecutar varios hilos.
+//Modifica el ejercicio 7 para que el Thread no se cree dentro de la clase que implementa Runnable,
+// todo lo referente al Thread se debe quitar de la clase runnable, y deberemos gestionarlo desde el main.
 
-public class Ejercicio1 extends Thread{
-    private int limite;
-
-    public void run (){
-        for (int i = 0; i < limite; i++) {
-
-        }
-    }
-
+public class Ejercicio1 {
 }
