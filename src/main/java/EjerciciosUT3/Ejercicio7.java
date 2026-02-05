@@ -15,8 +15,8 @@ public class Ejercicio7 extends Thread{
 
     @Override
     public void run() {
-        double tiempoInicio = (double) System.currentTimeMillis();
-        int contador = 0;
+        double tiempoInicio = (double) System.currentTimeMillis(); //Se crea la variable tiempoInicio
+        int contador = 0;                                          // para meter (en double) el tiempo (System.currentTimeMillis)
 
         for (int i = inicio; i <= fin; i++) {
             if (esPrimo(i)) {
@@ -27,7 +27,7 @@ public class Ejercicio7 extends Thread{
         double tiempoFin = (double) System.currentTimeMillis();
         double totalSegundos = (tiempoFin - tiempoInicio) / 1000.0;
 
-        System.out.println(nombre + " terminó. Encontró " + contador + " primos en " + totalSegundos + " seg.");
+        System.out.println(nombre + " termino, Encontro " + contador + " primos en " + totalSegundos + " seg.");
     }
     private boolean esPrimo(int n) {
         if (n <= 1) return false;

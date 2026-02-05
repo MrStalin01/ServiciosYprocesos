@@ -19,7 +19,7 @@ public class Ejercicio3 extends Thread{
     @Override
     public void run() {
         this.sumaTotal = calcularSuma(inicio);
-        System.out.println(nombre + " terminó. Suma: " + sumaTotal);
+        System.out.println(nombre + " termino. Suma: " + sumaTotal);
     }
 
     private int calcularSuma(int actual) {

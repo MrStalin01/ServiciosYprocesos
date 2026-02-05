@@ -4,37 +4,45 @@ package EjerciciosUT3;
 
 public class Ejercicio2 extends Thread{
     private String nombre;
-    private final int META = 100;
+    private static final int meta = 100;
     private static boolean hayGanador = false;
+    private int posicion;
 
     public Ejercicio2(String nombre) {
         super(nombre);
         this.nombre = nombre;
+        this.posicion = 0;
     }
 
     @Override
     public void run() {
-        correrRecursivo(0);
+        correr(posicion);
     }
 
-    private void correrRecursivo(int posicionActual) {
-        if (hayGanador)
-            return;
-        if (posicionActual >= META) {
-            marcarVictoria();
+    private void correr(int metros) {
+        if (hayGanador) {
             return;
         }
+
+        if (metros >= meta) {
+            synchronized (this.getClass()) {
+                if (!hayGanador) {
+                    hayGanador = true;
+                    System.out.println(nombre + " ha ganado la carrera");
+                }
+            }
+            return;
+        }
+
         try {
             Thread.sleep(10);
-            correrRecursivo(posicionActual + 1);
+            correr(metros + 1);
         } catch (InterruptedException e) {
-            System.out.println(nombre + " fue interrumpido.");
+            e.printStackTrace();
         }
     }
-    private synchronized void marcarVictoria() {
-        if (!hayGanador) {
-            hayGanador = true;
-            System.out.println(nombre.toUpperCase() + " ha ganado la carrera!");
-        }
+
+    public String getNombre() {
+        return nombre;
     }
 }
